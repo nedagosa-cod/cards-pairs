@@ -17,7 +17,7 @@
   text-align: center;
   width: 50%;
   margin: 12px auto;
-  height: 100%;
+  padding: 40px;
   background: #07182E;
   color: #fff;
   position: relative;
@@ -103,7 +103,6 @@
 .card-container {
   width: 100%;
   filter: drop-shadow(5px 10px 8px #4090b5) drop-shadow(-10px -11px 21px #9e30a9);
-  height: 450px;
   -webkit-filter: drop-shadow(5px 10px 8px #4090b5) drop-shadow(-10px -11px 21px #9e30a9);
 }
 
@@ -205,5 +204,36 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+  .barSetting {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 80%;
+  }
+  .barSetting {
+    width: 80%;
+  }
+}
+@media (max-width: 720px) {
+  .container {
+    width: 100%;
+  }
+  .barSetting__title {
+    font-size: 1.4rem;
+  }
+  .barSetting {
+    width: 100%;
   }
 }
