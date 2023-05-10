@@ -1,6 +1,11 @@
 import './App.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome, faRankingStar } from '@fortawesome/free-solid-svg-icons'
+
+
 import CardGame from './components/card/CardGame'
+import { UserHeader } from './components/UserHeader/UserHeader'
 
 function App() {
 
@@ -22,25 +27,31 @@ function App() {
     return [...imgs]
   }
 
-
   return (
       <>
         <main className='main'>
-          <section>
-            <div><h1>MEMOCARDS</h1></div>
-            <div>
-              <span>Tiempo: 00:48</span>
-              <span>Intentos: 7</span>
+          <section className='barSetting'>
+            <div className='barSetting__title'><h1>MEMOCARDS</h1></div>
+            <UserHeader className='barSetting__compoHeader' />
+            <div className='barSetting__buttons'>
+                <FontAwesomeIcon icon={faHome} className='barSetting__buttons--btn' />
+                <FontAwesomeIcon icon={faRankingStar} className='barSetting__buttons--btn' />
+            </div>  
+          </section>
+          <section class="container">
+            <div class="card-container">
+              <div class="card-content">
+              <form className='imgsContainer' id='listCards'>
+                {arrayImagenes().map((img, i)=>{
+                  return <CardGame img={img} className='cardCompo' key={i}/>
+                })}
+                {arrayImagenes().map((img, i)=>{
+                  return <CardGame img={img} className='cardCompo' key={i}/>
+                })}
+              </form>
+              </div>
             </div>
           </section>
-          <form className='imgsContainer' id='listCards'>
-            {arrayImagenes().map((img, i)=>{
-              return <CardGame img={img} className='cardCompo' key={i}/>
-            })}
-            {arrayImagenes().map((img, i)=>{
-              return <CardGame img={img} className='cardCompo' key={i}/>
-            })}
-          </form>
         </main>
       </>
   )

@@ -54,7 +54,7 @@
     display: block;
     width: 160px;
     height: 160%;
-    background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+    background: linear-gradient(90deg, transparent, #fff, #fff, #fff, #fff, transparent);
     animation: rotation_481 5000ms infinite linear;
   }
   
@@ -62,7 +62,7 @@
     position: absolute;
     width: 99%;
     height: 99%;
-    background-color: #151515;
+    background-color: #3b2957;
     border-radius: 5px;
     color: white;
     display: flex;

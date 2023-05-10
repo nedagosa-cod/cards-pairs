@@ -1,21 +1,209 @@
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 90%;
   height: 100vh;
   max-width: 1366px;
   margin: auto;
-  background: blue;
+  overflow: hidden;
   padding: 12px 0;
+}
+
+.barSetting {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  margin: 12px auto;
+  height: 100%;
+  background: #07182E;
+  color: #fff;
+  position: relative;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.barSetting::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+.barSetting::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  inset: 5px;
+  border-radius: 15px;
+} 
+
+.barSetting__title {
+  font-size: 1.6rem;
+  z-index: 10;
+}
+
+.barSetting__buttons {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20%;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}
+.barSetting__buttons--btn {
+  cursor: pointer;
+  background: #9e30a9;
+  padding: 6px;
+  margin: 4px 0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 10;
 }
 
 .imgsContainer {
   display: grid;
-  width: 50%;
-  background: red;
+  width: 80%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
   margin: auto;
   justify-items: center;
+  z-index: 100;
+}
+
+/* ESTILOS FORM */
+
+.container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  margin: 12px auto;
+  width: 50%;
+  aspect-ratio: 4/3;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card-container {
+  width: 100%;
+  filter: drop-shadow(46px 36px 24px #4090b5) drop-shadow(-55px -40px 25px #9e30a9);
+  animation: blinkShadowsFilter 8s ease-in infinite;
+  height: 450px;
+}
+
+.card-content {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+  grid-template-rows: 0.1fr 0.7fr 0.25fr;
+  background-color: hsl(296, 59%, 10%);
+  width: 100%;
+  aspect-ratio: 4/3;
+  -webkit-clip-path: polygon(0 0, 85% 0, 100% 14%, 100% 60%, 92% 65%, 93% 77%, 99% 80%, 99% 90%, 89% 100%, 0 100%);
+  clip-path: polygon(0 0, 85% 0, 100% 14%, 100% 60%, 92% 65%, 93% 77%, 99% 80%, 99% 90%, 89% 100%, 0 100%);
+}
+
+.card-content::before {
+  content: "";
+  position: absolute;
+  width: 250%;
+  aspect-ratio: 1/1;
+  transform-origin: center;
+  background: linear-gradient(to bottom, transparent, transparent, #66e0ff, #66e0ff, #e366ff, #e366ff, transparent, transparent), linear-gradient(to left, transparent, transparent, #66e0ff, #66e0ff, #e366ff, #e366ff, transparent, transparent);
+  animation: rotate 5s infinite linear;
+}
+
+.card-content::after {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 98%;
+  height: 98%;
+  background: repeating-linear-gradient(to bottom, transparent 0%, rgba(64, 144, 181, 0.6) 1px, rgb(0, 0, 0) 3px, rgba(64, 144, 181, 0.3019607843) 5px, #153544 4px, transparent 0.5%), repeating-linear-gradient(to left, hsl(295, 60%, 12%) 100%, hsla(295, 60%, 12%, 0.99) 100%);
+  box-shadow: inset 0px 0px 30px 40px hsl(296, 59%, 10%);
+  -webkit-clip-path: polygon(0 0, 85% 0, 100% 14%, 100% 60%, 92% 65%, 93% 77%, 99% 80%, 99% 90%, 89% 100%, 0 100%);
+  clip-path: polygon(0 0, 85% 0, 100% 14%, 100% 60%, 92% 65%, 93% 77%, 99% 80%, 99% 90%, 89% 100%, 0 100%);
+  animation: backglitch 94ms linear infinite;
+}
+
+@keyframes backglitch {
+  0% {
+    box-shadow: inset 0px 20px 30px 40px hsl(296, 59%, 10%);
+  }
+
+  50% {
+    box-shadow: inset 0px -20px 30px 40px hsl(296, 59%, 10.2%);
+  }
+
+  to {
+    box-shadow: inset 0px 20px 30px 40px hsl(296, 59%, 10%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(-50%, 20%);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(40%, 10%);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-50%, 20%);
+  }
+}
+
+@keyframes blinkShadowsFilter {
+  0% {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
+  }
+
+  25% {
+    filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 24px #9e30a9);
+  }
+
+  50% {
+    filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  75% {
+    filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.2941176471));
+  }
+
+  to {
+    filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
+  }
+}/*# sourceMappingURL=style.css.map */
+
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
