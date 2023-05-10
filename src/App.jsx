@@ -22,15 +22,23 @@ function App() {
     return [...imgs]
   }
 
+
   return (
       <>
         <main className='main'>
+          <section>
+            <div><h1>MEMOCARDS</h1></div>
+            <div>
+              <span>Tiempo: 00:48</span>
+              <span>Intentos: 7</span>
+            </div>
+          </section>
           <form className='imgsContainer' id='listCards'>
             {arrayImagenes().map((img, i)=>{
-              return <CardGame key={i} img={img}/>
+              return <CardGame img={img} className='cardCompo' key={i}/>
             })}
             {arrayImagenes().map((img, i)=>{
-              return <CardGame key={i} img={img}/>
+              return <CardGame img={img} className='cardCompo' key={i}/>
             })}
           </form>
         </main>

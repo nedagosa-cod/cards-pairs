@@ -1,19 +1,26 @@
 import './CardGame.css'
-import { useContext } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { AppContext } from '../../context/context'
 
 
 const CardGame = (props) => {
-    let IDimages = props.img.split('/').pop().split('.')[0]
     const { setCard_a, setCard_b, card_a } = useContext(AppContext)
+    const numRandom = useRef(0)
+
+    let IDimages = props.img.split('/').pop().split('.')[0]
+    let numAle = Math.floor(Math.random() * 16) + 1;
 
     const validarClick = (e) => {
         let cardIdentify = e.target.name
         card_a == '' ? setCard_a(cardIdentify) : setCard_b(cardIdentify)
     }
 
+    useEffect(() =>{
+        numRandom.current.style.order = numAle
+    },[])
+
     return (
-        <label className="card">
+        <label className="card" ref={numRandom}>
             <input type="checkbox" name={IDimages} className='check' onClick={validarClick}/>
             <div className="content">
                 <div className="back">
@@ -30,7 +37,6 @@ const CardGame = (props) => {
                         </figure>
                     </div>
                 </div>
-
             </div>
         </label>
     )
