@@ -23,6 +23,7 @@ const CardGame = (props) => {
                 </div>
 
                 <div className="front">
+                    <div className="front__done"></div>
                     <div className="back-content">
                         <figure>
                             <img src={props.img} alt="stiker"/>

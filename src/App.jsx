@@ -25,14 +25,14 @@ function App() {
   return (
       <>
         <main className='main'>
-          <section className='imgsContainer'>
+          <form className='imgsContainer' id='listCards'>
             {arrayImagenes().map((img, i)=>{
               return <CardGame key={i} img={img}/>
             })}
             {arrayImagenes().map((img, i)=>{
               return <CardGame key={i} img={img}/>
             })}
-          </section>
+          </form>
         </main>
       </>
   )

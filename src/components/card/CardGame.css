@@ -1,4 +1,5 @@
 .card {
+  position: relative;
     display: block;
     overflow: visible;
     width: 90%;
@@ -24,7 +25,20 @@
     border-radius: 5px;
     overflow: hidden;
   }
-  
+  .front__done {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: greenyellow;
+    z-index: 2;
+    opacity: .5;
+  }
+  .front__done.on {
+    display: block;
+  }
   .back {
     width: 100%;
     height: 100%;
@@ -59,6 +73,7 @@
   }
   .back-content figure{
     width: 80%;
+    z-index: 3;
   }
   input[type="checkbox"] {
     display: none;
@@ -78,6 +93,7 @@
   }
   
   .front {
+    position: relative;
     transform: rotateY(180deg);
     color: white;
   }
