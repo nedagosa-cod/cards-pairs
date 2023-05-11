@@ -1,6 +1,13 @@
 import './App.css'
 
 import img1 from './imgCards/1.png'
+import img2 from './imgCards/2.png'
+import img3 from './imgCards/3.png'
+import img4 from './imgCards/4.png'
+import img5 from './imgCards/5.png'
+import img6 from './imgCards/6.png'
+import img7 from './imgCards/7.png'
+import img8 from './imgCards/8.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faRankingStar } from '@fortawesome/free-solid-svg-icons'
@@ -14,13 +21,13 @@ function App() {
   const arrayImagenes = () => {
     const imagePaths = [
       img1,
-      img1,
-      img1,
-      img1,
-      img1,
-      img1,
-      img1,
-      img1
+      img2,
+      img3,
+      img4,
+      img5,
+      img6,
+      img7,
+      img8
     ];
 
     let imgs = imagePaths.sort(()=>{
