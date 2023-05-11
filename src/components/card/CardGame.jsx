@@ -6,6 +6,7 @@ import { AppContext } from '../../context/context'
 const CardGame = (props) => {
     const { setCard_a, setCard_b, card_a } = useContext(AppContext)
     const numRandom = useRef(0)
+    const pathImg = props.img
 
     let IDimages = props.img.split('/').pop().split('.')[0]
     let numAle = Math.floor(Math.random() * 16) + 1;
@@ -33,7 +34,7 @@ const CardGame = (props) => {
                     <div className="front__done"></div>
                     <div className="back-content">
                         <figure>
-                            <img src={props.img} alt="stiker"/>
+                            <img src={pathImg} alt="stiker"/>
                         </figure>
                     </div>
                 </div>

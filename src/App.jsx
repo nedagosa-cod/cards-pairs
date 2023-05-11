@@ -11,14 +11,14 @@ function App() {
 
   const arrayImagenes = () => {
     const imagePaths = [
-      '/src/imgCards/1.png',
-      '/src/imgCards/2.png',
-      '/src/imgCards/3.png',
-      '/src/imgCards/4.png',
-      '/src/imgCards/5.png',
-      '/src/imgCards/6.png',
-      '/src/imgCards/7.png',
-      '/src/imgCards/8.png'
+      'src/imgCards/1.png',
+      'src/imgCards/2.png',
+      'src/imgCards/3.png',
+      'src/imgCards/4.png',
+      'src/imgCards/5.png',
+      'src/imgCards/6.png',
+      'src/imgCards/7.png',
+      'src/imgCards/8.png'
     ];
 
     let imgs = imagePaths.sort(()=>{
