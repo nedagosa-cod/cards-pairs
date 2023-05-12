@@ -1,10 +1,11 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { AppContext } from "./context"
 
 const ContextCompo = ({children}) => {
 
     const [card_a, setCard_a] = useState('')
     const [card_b, setCard_b] = useState('')
+    let [pares, setPares] = useState(0)
     let [contador, setContador] = useState(0)
 
     console.log('a: ' + card_a)
@@ -25,7 +26,6 @@ const ContextCompo = ({children}) => {
                 } 
             }
         } else {
-            console.log('hola')
             setTimeout(() => {
                 for (const check of listChecks) {
                     check.name == card_a ? check.checked = false : ''
@@ -37,16 +37,20 @@ const ContextCompo = ({children}) => {
             setCard_a('')
             setCard_b('')
             setContador(contador+  1)
-            for (const check of listChecks) {
-                check.removeAttribute('disabled')
+            if (card_a == card_b) {
+                setPares(pares+ 1)
             }
-        },1500)
+            for (let i = 0; i < listChecks.length; i++) {
+                listChecks[i].removeAttribute('disabled')
+            }
+
+        },500)
     }
 
-
+    
 
     return (
-        <AppContext.Provider value={{setCard_a, setCard_b, card_a, card_b, contador}}>
+        <AppContext.Provider value={{setCard_a, setCard_b, card_a, card_b, contador, pares}}>
             { children }
         </AppContext.Provider>
     )
