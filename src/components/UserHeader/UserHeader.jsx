@@ -7,15 +7,26 @@ import './userHeader.css'
 export const UserHeader = () => {
     
     let [timer, setTimer] = useState(0)
-    const { contador, pares } = useContext(AppContext)
+    const { contador, pares, setPuntaje, puntaje } = useContext(AppContext)
 
     useEffect(() => {
         const fnTimer =  setInterval(() =>{
             setTimer(timer++)
         }, 1000);
-        return () => clearInterval(fnTimer);
+        return () => clearInterval(fnTimer); 
+
     },[])
 
+    useEffect(() => {
+        setTimer(0)
+    },[puntaje])
+
+    useEffect(() => {
+        if (pares == 8) {
+            let result = 100000 - ((180 * timer) + (30 * contador))
+            setPuntaje(result)
+        }
+    },[pares])
 
     return (
         <div className='data'>

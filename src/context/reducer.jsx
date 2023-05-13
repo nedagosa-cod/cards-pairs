@@ -2,17 +2,20 @@ import { useState } from "react"
 import { AppContext } from "./context"
 
 const ContextCompo = ({children}) => {
+    
+    let listChecks = document.getElementsByClassName('check')
 
     const [card_a, setCard_a] = useState('')
     const [card_b, setCard_b] = useState('')
     let [pares, setPares] = useState(0)
     let [contador, setContador] = useState(0)
+    let [puntaje, setPuntaje] = useState(0)
+    let [prueba, setPrueba] = useState('')
 
     console.log('a: ' + card_a)
     console.log('b: ' + card_b)
 
     if (card_a != '' && card_b != '') {
-        let listChecks = document.getElementsByClassName('check')
         
         for (const check of listChecks) {
             check.setAttribute('disabled', 'disabled')
@@ -47,10 +50,20 @@ const ContextCompo = ({children}) => {
         },500)
     }
 
-    
+    const resetGame = () => {
+        setContador(0)
+        setPares(0)
+        setPuntaje(0)
+        for (const check of listChecks) {
+            check.checked = false
+            check.checked = false
+            check.nextSibling.children[1].children[0].classList.remove('on')
+            setPrueba('cambio')
+        }
+    }
 
     return (
-        <AppContext.Provider value={{setCard_a, setCard_b, card_a, card_b, contador, pares}}>
+        <AppContext.Provider value={{resetGame, setCard_a, setCard_b, setPuntaje, setPares, setContador, card_a, prueba, card_b, contador, pares, puntaje}}>
             { children }
         </AppContext.Provider>
     )

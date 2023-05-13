@@ -15,9 +15,19 @@ import { faHome, faRankingStar } from '@fortawesome/free-solid-svg-icons'
 
 import CardGame from './components/card/CardGame'
 import { UserHeader } from './components/UserHeader/UserHeader'
+import Menu from './components/menu/menu'
+import { useContext, useEffect, useState } from 'react'
+import { AppContext } from './context/context'
 
 function App() {
 
+  const [reiniciador, setReiniciador] = useState(0);
+
+  const handleReiniciar = () => {
+    setReiniciador(reiniciador + 1);
+    console.log('Reiniciar')
+  };
+  
   const arrayImagenes = () => {
     const imagePaths = [
       img1,
@@ -38,7 +48,8 @@ function App() {
 
   return (
       <>
-        <main className='main'>
+        <main className='main' >
+          <Menu reiniciador={handleReiniciar}></Menu>
           <section className='barSetting'>
             <div className='barSetting__title'><h1>MEMOCARDS</h1></div>
             <UserHeader className='barSetting__compoHeader' />
@@ -52,10 +63,10 @@ function App() {
               <div className="card-content">
               <form className='imgsContainer' id='listCards'>
                 {arrayImagenes().map((img, i)=>{
-                    return <CardGame img={img} className='cardCompo' key={i}/>
+                    return <CardGame img={img} className='cardCompo' key={i - (reiniciador % 2)}/>
                   })}
                 {arrayImagenes().map((img, i)=>{
-                  return <CardGame img={img} className='cardCompo' key={i}/>
+                  return <CardGame img={img} className='cardCompo' key={i - (reiniciador % 2)}/>
                 })}
               </form>
               </div>
