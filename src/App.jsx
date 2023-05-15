@@ -10,7 +10,7 @@ import img7 from './imgCards/7.png'
 import img8 from './imgCards/8.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faRankingStar } from '@fortawesome/free-solid-svg-icons'
+import { faRankingStar } from '@fortawesome/free-solid-svg-icons'
 
 
 import CardGame from './components/card/CardGame'
