@@ -5,7 +5,7 @@ import { AppContext } from "../../context/context"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRankingStar, faStar } from '@fortawesome/free-solid-svg-icons';
 
-const Menu = ({reiniciador}) => {
+const Ranking = ({reiniciador}) => {
 
     const [displayScore, setDisplayScore] = useState("none");
     const { puntaje, resetGame } = useContext(AppContext)
@@ -37,4 +37,4 @@ const Menu = ({reiniciador}) => {
     )
 }
 
-export default Menu
+export default Ranking

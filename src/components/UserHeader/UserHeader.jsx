@@ -11,14 +11,13 @@ export const UserHeader = () => {
 
     useEffect(() => {
         const fnTimer =  setInterval(() =>{
-            setTimer(timer++)
+            if (puntaje) {
+                setTimer(0)
+            } else {
+                setTimer(timer++)
+            }
         }, 1000);
         return () => clearInterval(fnTimer); 
-
-    },[])
-
-    useEffect(() => {
-        setTimer(0)
     },[puntaje])
 
     useEffect(() => {

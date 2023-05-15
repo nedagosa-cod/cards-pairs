@@ -1,0 +1,106 @@
+.popup {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.601);
+    z-index: 100;
+}
+
+.cardBox {
+    width: 450px;
+    height: 350px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(254, 254, 254, 0.4) 0px 2px 10px 0px,
+      rgba(242, 240, 240, 0.5) 0px 2px 25px 0px;
+  }
+  
+  .card {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    background: #000814;
+    border-radius: 20px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
+  }
+
+  .cardBox::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 160%;
+    background: #40E0D0;
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    transform-origin: center;
+    animation: glowing_401 5s linear infinite;
+  }
+  .h4 {
+    font-size: 1.4rem;
+  }
+  @keyframes glowing_401 {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .button {
+    background: #640a6b;
+    border: none;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    padding: 8px 16px;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin: 6px 0;
+}
+.button:hover {
+  background: #921b9a;
+}
+.puntaje{
+  margin: 16px 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.ranking {
+  margin: 20px 0 12px 0;
+  font-size: 1.4rem;
+  padding: 12px 12px;
+  background: #9364ff;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.ranking:hover {
+  background: #b190ff;
+}

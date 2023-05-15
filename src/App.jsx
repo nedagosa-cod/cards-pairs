@@ -17,7 +17,6 @@ import CardGame from './components/card/CardGame'
 import { UserHeader } from './components/UserHeader/UserHeader'
 import Menu from './components/menu/menu'
 import { useState } from 'react'
-import { useEffect } from 'react'
 
 function App() {
 
@@ -53,7 +52,6 @@ function App() {
             <div className='barSetting__title'><h1>MEMOCARDS</h1></div>
             <UserHeader className='barSetting__compoHeader' />
             <div className='barSetting__buttons'>
-                <FontAwesomeIcon icon={faHome} className='barSetting__buttons--btn' />
                 <FontAwesomeIcon icon={faRankingStar} className='barSetting__buttons--btn' />
             </div>  
           </section>
