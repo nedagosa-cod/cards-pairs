@@ -10,7 +10,6 @@ const ContextCompo = ({children}) => {
     let [pares, setPares] = useState(0)
     let [contador, setContador] = useState(0)
     let [puntaje, setPuntaje] = useState(0)
-    let [prueba, setPrueba] = useState('')
 
     console.log('a: ' + card_a)
     console.log('b: ' + card_b)
@@ -58,12 +57,11 @@ const ContextCompo = ({children}) => {
             check.checked = false
             check.checked = false
             check.nextSibling.children[1].children[0].classList.remove('on')
-            setPrueba('cambio')
         }
     }
 
     return (
-        <AppContext.Provider value={{resetGame, setCard_a, setCard_b, setPuntaje, setPares, setContador, card_a, prueba, card_b, contador, pares, puntaje}}>
+        <AppContext.Provider value={{resetGame, setCard_a, setCard_b, setPuntaje, setPares, setContador, card_a, card_b, contador, pares, puntaje}}>
             { children }
         </AppContext.Provider>
     )

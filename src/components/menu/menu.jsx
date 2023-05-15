@@ -5,9 +5,10 @@ import { AppContext } from "../../context/context"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRankingStar, faStar } from '@fortawesome/free-solid-svg-icons';
 
-const Menu = ({reiniciador}) => {
+const Menu = ({reiniciador, openMenu, closeMenu}) => {
 
-    const [displayStyle, setDisplayStyle] = useState("none");
+    const [displayScore, setDisplayScore] = useState("none");
+    const [displayConfig, setDisplayConfig] = useState("none");
     const { puntaje, resetGame } = useContext(AppContext)
 
     const fnResetGame = () => {
@@ -15,21 +16,29 @@ const Menu = ({reiniciador}) => {
         resetGame()
     }
 
-    useEffect(() => {
+    const fnReanudarGame = () => {
+        setDisplayScore('none');
+        setDisplayConfig('none');
+    }
+
+    useEffect(() => {    
         if (puntaje > 0) {
-            setDisplayStyle("flex");
+            setDisplayScore('flex');
+            setDisplayConfig("block");
         } else {
-            setDisplayStyle("none");
-          }
-    },[puntaje])
+            setDisplayScore('none');
+            setDisplayConfig('none');
+        }
+
+    },[puntaje, openMenu])
 
     return (
-        <section className={style.popup} style={{display: displayStyle}}>
+        <section className={style.popup} style={{display: displayScore}}>
             <div className={style.cardBox}>
                 <div className={style.card}>
-                    <div className={style.h4}>Puntaje</div>
-                    <span className={style.puntaje}><FontAwesomeIcon icon={faStar}/> {puntaje}</span>
-                    <button className={style.button} type='button' onClick={fnResetGame}>Jugar de nuevo</button>
+                    <div className={style.h4} >Puntaje</div>
+                    <span className={style.puntaje} ><FontAwesomeIcon icon={faStar}/> {puntaje}</span>
+                    <button className={style.button} type='button' onClick={fnResetGame}>Reiniciar</button>
                     <FontAwesomeIcon icon={faRankingStar} className={style.ranking} />
                 </div>
             </div>

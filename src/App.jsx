@@ -16,8 +16,8 @@ import { faHome, faRankingStar } from '@fortawesome/free-solid-svg-icons'
 import CardGame from './components/card/CardGame'
 import { UserHeader } from './components/UserHeader/UserHeader'
 import Menu from './components/menu/menu'
-import { useContext, useEffect, useState } from 'react'
-import { AppContext } from './context/context'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 function App() {
 
@@ -25,9 +25,8 @@ function App() {
 
   const handleReiniciar = () => {
     setReiniciador(reiniciador + 1);
-    console.log('Reiniciar')
   };
-  
+
   const arrayImagenes = () => {
     const imagePaths = [
       img1,
