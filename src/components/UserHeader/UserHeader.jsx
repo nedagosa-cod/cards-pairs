@@ -24,7 +24,6 @@ export const UserHeader = () => {
         if (pares == 8) {
             let result = 100000 - ((180 * timer) + (30 * contador))
             setPuntaje(result)
-            console.log('puntaje: ' + result)
         }
     },[pares])
 

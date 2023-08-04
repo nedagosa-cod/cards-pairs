@@ -11,9 +11,6 @@ const ContextCompo = ({children}) => {
     let [contador, setContador] = useState(0)
     let [puntaje, setPuntaje] = useState(0)
 
-    console.log('a: ' + card_a)
-    console.log('b: ' + card_b)
-
     if (card_a != '' && card_b != '') {
         
         for (const check of listChecks) {
