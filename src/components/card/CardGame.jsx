@@ -21,7 +21,7 @@ const CardGame = (props) => {
     },[])
 
     return (
-        <label className="card" ref={numRandom}>
+        <label className="card test" ref={numRandom}>
             <input type="checkbox" name={IDimages} className='check' onClick={validarClick}/>
             <div className="content">
                 <div className="back">
